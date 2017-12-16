@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+  <div class="jumbotron">
+      <h1 class="text-center">Ralph Winner Baby :) DJANGO WEBSITES</h1>
+      <p class="text-center">Sa se jis yon ti test pou aprantissaj Django || Rien de serieux la ddedans .. Okk</p>
+      <p class="text-center">
+            <button class="btn btn-primary btn-lg" id="test" data-toggle="modal" data-target="#modal1" type="button">Appran Plis</button>
+      </p>
+  </div>
+
+  <div class="modal" id="modal1" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Appran plis sou RALPH DJANGO WEBSITES 2017</h4>
+              </div>
+              <blockquote>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </blockquote>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="modal" id="#modal-1" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4>M pral videe info sou ou laa nan ti Box laa :)</h4>
+              </div>
+          </div>
+      </div>1
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="{% static 'Img/logo.png' %}" alt="...">
+        <div class="caption text-center">
+          <h3 class="">Code9Haiti</h3>
+          <p>...</p>
+          <p><a href="#" class="btn btn-primary" role="button">Afficher</a> <a href="#" class="btn btn-default" role="button">Afficher</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="{% static 'Img/logo.png' %}" alt="...">
+        <div class="caption text-center">
+          <h3>Code9Haiti</h3>
+          <p>...</p>
+          <p><a href="#" class="btn btn-primary" role="button">Afficher</a> <a href="#" class="btn btn-default" role="button">Afficher</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="{% static 'Img/logo.png' %}" alt="...">
+        <div class="caption text-center">
+          <h3>Code9Haiti</h3>
+          <p>...</p>
+          <p><a href="#" class="btn btn-primary" role="button">Afficher</a> <a href="#" class="btn btn-default" role="button">Afficher</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Enskri a Ralphlaa Django websites 2017</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin" action="/enskri/" method="post" enctype="multipart/form-data">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nom ou" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Prenom ou" name="prenom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Non itilizate w" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email ou" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Modpas ou" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Retape modpas ou" name="passwordd" required>
+                    </div>
+                    <div class="form-group">
+                            <label>Sexe</label>
+                            <div class="form-group">
+                                <select class="form-control" name="sexe">
+                                    <option> Homme </option>
+                                    <option> Femme </option>
+                                    <option> Autre! </option>
+                                </select>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label>Date de naissance</label>
+                            <div class="form-group text-right">
+                              <input type="date" class="form-control" name="naissance" required>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                          <label>Telephone</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">+509</span>
+                                <input type="text" class="form-control" placeholder="38325242" required name="telephone">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control" placeholder="Info about You" name="about" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Veuillez Choisir votre Photo de profil</label>
+                        <input type="file" name="profil" required accept=".jpg, .jpeg, .png">
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit"> Enskripsyon </button>
+
+                    <a href="{% url 'about' %}" class="pull-right need-help">Bezwen Ed ?? </a><span class="clearfix"></span>
+                </form>
+            </div>
+            <span  class=" new-account text-center"> Siw enskri deja <a href="{% url 'Konekte' %}" class="text-center"> Konekte la svp </a> </span>
+        </div>
+    </div>
+</div>
+</br></br></br>
+
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+    <div class="well">
+          <h1 class="">Bienvenue sur votre page de profile <strong>{{ username }}</strong></h1>
+          <p class="text-center">Vous pouvez Modifier ou/et Exporter vos informations de profil</p>
+          <p class="text-right">
+                <a class="btn btn-warning" type="button" href="/konekte/deconnexion">Deconnexion</a>
+          </p>
+    </div>
+<br>
+    <div class="container well">
+        <div class="col-md-5">
+            <div class="profil row text-center"><br>
+                <img alt="profil" src="" class="profil_photo img-thumbnail">
+                <div class="row text-center">
+                    <h4>{{ prenom }} {{ nom|upper }}</h4>
+                </div>
+            </div>
+            <hr><br>
+            <h4>Retrouver des amis depuis une liste d'utilisateur RalphRezoSosyal</h4>
+            <div class="row tab-content">
+                <ul class="list-group-success">
+                    {% for user in users %}
+                        <li class="list-group-item text-left row">
+                            <small class="col-sm-1">{{ forloop.counter }}</small>
+                            <img src="" alt="logo" class="logo_image img-thumbnail col-sm-3">
+                            <h5 class="col-sm-3">{{ user }}</h5>
+                            <a type="button" class="btn btn-sm btn-primary col-sm-3 col-sm-offset-2" id="{{user.pk}}">m vle zanmi l</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div><br><br><br>
+        </div>
+        <div class="details col-md-6 col-md-offset-1 well">
+            <br>
+            <h3>Bienvenue <strong>{{ username }}</strong></h3>
+            <small>My name is Ralphlaa and I am a mha fucking Winner and I hope I will be like that till the death... #Rwn</small>
+            <hr>
+                <h3 class="text-bold">Information de base</h3><br>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                          <label>Nom</label>
+                          <input type="text" class="form-control" name="nom" value="{{ nom }}">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Prenom</label>
+                          <input type="text" class="form-control" name="prenom" value="{{ prenom }}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Nom d'utlisateur</label>
+                            <input type="text" class="form-control" name="username" value="{{ username }}">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" value="{{ email }}">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                          <label>Telephone</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">+509</span>
+                                <input type="number" class="form-control" placeholder="38325242" required name="telefon" value="{{ telephone }}">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <label>Sexe</label>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    {% if sexe == 'Homme' %}
+                                        <option selected> Homme </option>
+                                        <option> Femme </option>
+                                        <option> Autre! </option>
+                                    {% elif sexe == 'Femme' %}
+                                        <option selected> Femme </option>
+                                        <option> Homme </option>
+                                        <option> Autre! </option>
+                                    {% else %}
+                                        <option selected> Autre! </option>
+                                        <option> Homme </option>
+                                        <option> Femme </option>
+                                    {% endif %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <label>Date de naissance</label>
+                            <div class="form-group text-right">
+                              <input type="date" class="form-control" value='{{ naissance2 }}'>
+                                <small class="text-right info">{{ naissance }}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="row form-group text-right">
+                        <input type="button" class="btn btn-default" value="Modifier profile">
+                        <input type="button" class="btn btn-default" value="Exporter profile">
+                        <input type="button" class="btn btn-default" value="Enregistrer modification">
+                    </div>
+                </div>
+
+            </div>
+        <br>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Konekte a Ralphlaa Django websites 2017</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="">
+                <form class="form-signin" method="post" action="/konekte/">{% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username ou" required name="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Modpas ou" required name="modpas">
+                    </div>
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit"> Konekte </button>
+
+                    <label class="checkbox pull-left">
+                        <input type="checkbox" value="remember-me">
+                        Toujou Konekte
+                    </label>
+                    <a href="{% url 'about' %}" class="pull-right need-help">Bezwen Ed ?? </a><span class="clearfix"></span>
+                </form>
+            </div>
+            <span  class=" new-account text-center"> Siw poko enskri <a href="{% url 'Enskri' %}" class="text-center"> Kreye yon kont gratis </a> </span>
+        </div>
+    </div>
+</div>
+</br></br></br>
+
+{% endblock %}

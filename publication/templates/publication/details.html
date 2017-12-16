@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<h2 class="text-center">Details sur la Publication</h2>
+
+<div class="row">
+            <div class="col-md-5 col-md-offset-1">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <h4 class="col-md-8"><a href="/profil/{{ publication_id }}" style="color: aliceblue"> {{ user }} </a></h4>
+                        <h6 class="col-md-4"> {{ date }} </h6>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <h4 class="text-right"><strong>{{ titre }}</strong></h4>
+                    <hr>
+                    <blockquote>
+                        {{ body }}
+                    </blockquote>
+                </div>
+                <div class="panel panel-footer text-right">
+                    <small class="">Mise a jour | {{ edit }} </small>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="text-center">{{ titre }}</h4>
+                </div>
+                <div class="panel-body toScroll">
+                    <div class="text-right">
+                        <small>Commentaire sur la publication</small>
+                    </div></br>
+                    <div class="">
+                        <ul class="list-unstyled">
+                            <li>
+                                <blockquote class="small bg-warning">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-danger">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-warning">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-succes">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-danger">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-warning">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-succes">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-danger">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-warning">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-succes">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-danger">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                            <li>
+                                <blockquote class="small bg-warning">
+                                    Komante a potko enplemante par Ralphlaa TheWinnerBabyyy!! m sur et certain lap fel kan menm
+                                </blockquote>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <label>Votre Commentaire</label>
+                        <textarea class="form-control" rows="5" id="Comment" name="Comment"></textarea>
+                    </div>
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary">Poster Ton Commentaire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+	<div class="col-md-3 col-md-offset-2">
+			<a href="/publication/liste_des_publications" type="button" class="btn btn-success btn-lg btn-block">Retour a la listes des publications</a>
+	</div>
+	<div class="col-md-3">
+			<button class="btn btn-warning btn-lg btn-block" data-toggle="modal" data-target="#modal1" type="button">
+			Modifier cette publication</button>
+	</div>
+    <div class="col-md-3">
+            <button class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#modal2" type="button">
+            Effacer Cette publication</button>
+  </div>
+</div>
+</br></br>
+
+<div class="modal" id="modal2" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Effacer | {{ titre }} | {{ user }}</h4>
+              </div>
+              <div class="well well-sm">
+                <form method="POST" action="/publication/effacer/{{ publication_id }}"> {% csrf_token %}
+                <div class="row">
+                    <blockquote>
+                      {{ body }}
+                    </blockquote>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-danger pull-right" id="btnContactUs">
+                            Effacer Publication w lan</button>
+                    </div>
+                </div>
+                </form>   
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+  <div class="modal" id="modal1" tabindex="-1" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Modifier | {{ titre }} | {{ user }}</h4>
+              </div>
+              <div class="well well-sm">
+             		<form method="POST" action="/publication/modification/{{ publication_id }}"> {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Entrer Nom w</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Entrer Nom w" required="required" value={{user}} />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Adresse Email ou</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Adresse Email ou" required="required" value="{{ email }}" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Choisi Yon Sije Pou Post Ou a</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="Pale de Spo (Foot and basket)">Pale de Spo (Foot and basket)</option>
+                                <option value="Pale de Film ak Serie">Pale de Film ak Serie</option>
+                                <option value="Pale de Aktris Porno">Pale de Aktris Porno</option>
+                                <option value="Nenpot lot Koze">Nenpot lot Koze</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Piblikasyon w lan</label>
+                           <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Pale Pale Pale ....">
+                                	{{ body }}
+                                </textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Modifier Publication w lan</button>
+                    </div>
+                </div>
+                </form> 	
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+{% endblock %}
